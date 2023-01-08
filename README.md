@@ -1,6 +1,6 @@
 # Debt Solver
 
-A tool to solve debt allocation problems. Given a dictionary of expenses, the solver will determine how much each person owes or is owed in order to even out the expenses.
+A tool to solve debt allocation problems. Given a dictionary of expenses, the solver will determine how much each person owes or is owed in order to even out the expenses while minimizing the number of transactions.
 
 ## Mathematical Formulation
 
