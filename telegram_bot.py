@@ -45,7 +45,7 @@ def start(update, context):
             current state of the bot.
     """
     # Send a message to the user
-    update.message.reply_text('Send me a single message with each member on a new line, following the format \[name]\[space]\[amount]. Those who did not pay, add them with 0 in amount.')
+    update.message.reply_text('Send me a single message with each member on a new line, following the format [name][space][amount]. Those who did not pay, add them with 0 in amount.')
 
 def message(update, context):
     """
