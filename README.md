@@ -6,7 +6,7 @@ A tool to solve debt allocation problems. Given a dictionary of expenses, the so
 
 The debt allocation problem can be formulated as an integer linear programming problem as follows:
 
-Let $n$ be the number of people, $E_i$ be the amount spent by person $i$, and $D_i$ be the amount that person $i$ owes. The problem can be written as:
+Let $n$ be the number of people, $L_j$ be the amount that person $j$ is owed and $D_i$ be the amount that person $i$ owes. The problem can be written as:
 
 $$
 \begin{aligned}
@@ -18,9 +18,7 @@ $$
 \end{aligned}
 $$
 
-where $L_j$ is the amount that person $j$ is owed, and $x_{i,j}$ and $z_{i,j}$ are binary and integer variables, respectively. The first constraint ensures that each person gets back the amount that they are owed, and the second constraint ensures that each person pays back their debts. The third constraint is a big-M constraint that ensures that a debt is only assigned if it is non-zero.
-
-The third constraint is known as a big-M constraint, where $M$ is a large positive constant. This constraint is used to ensure that a debt is only assigned if it is non-zero. Specifically, if $x_{i,j} = 1$, then the debt $z_{i,j}$ must be non-zero, and if $x_{i,j} = 0$, then the debt $z_{i,j}$ must be zero. The large value of $M$ ensures that the constraint is always satisfied when $x_{i,j} = 1$.
+where $x_{i,j}$ and $z_{i,j}$ are binary and integer variables, respectively. The first constraint ensures that each person gets back the amount that they are owed, and the second constraint ensures that each person pays back their debts. The third constraint is a big-M constraint that ensures that a debt is only assigned if it is non-zero.
 
 ## Usage
 
