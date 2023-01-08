@@ -33,7 +33,6 @@ pip install ortools
 Then, create an instance of the `DebtSolver` class with a dictionary of expenses and call the `solve` method.
 
 ```python
-import collections
 from debt_solver import DebtSolver
 
 expenses = {"Person A": 100, "Person B": 50, "Person C": 0, "Person D": 18}
