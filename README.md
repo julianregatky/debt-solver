@@ -42,4 +42,4 @@ result = DebtSolver(expenses).solve()
 A version of this code is also available through a telegram bot with the handle `split_wiser_bot`.
 
 <!-- ![Sample bot image](sample_bot_image.png) -->
-<img src='https://raw.githubusercontent.com/julianregatky/debt-solver/main/sample_bot_image.png' alt='Sample bot image' width=480 style='margin: 0 auto;' />
+<img src='https://raw.githubusercontent.com/julianregatky/debt-solver/main/sample_bot_image.png' alt='Sample bot image' width=480 />
