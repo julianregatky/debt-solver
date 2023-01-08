@@ -36,6 +36,6 @@ Then, create an instance of the `DebtSolver` class with a dictionary of expenses
 import collections
 from debt_solver import DebtSolver
 
-expenses = collections.OrderedDict(zip(['Person A', 'Person B', 'Person C'], [100, 50, 0]))
+expenses = {"Person A": 100, "Person B": 50, "Person C": 0, "Person D": 18}
 result = DebtSolver(expenses).solve()
 ```
