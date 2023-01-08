@@ -36,3 +36,9 @@ from debt_solver import DebtSolver
 expenses = {"Person A": 100, "Person B": 50, "Person C": 0, "Person D": 18}
 result = DebtSolver(expenses).solve()
 ```
+
+## Telegram Bot
+
+A version of this code is also available through a telegram bot with the handle `split_wiser_bot`.
+
+![Sample bot image](sample_bot_image.png)
