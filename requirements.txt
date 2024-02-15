@@ -1,1 +1,2 @@
 ortools==9.5.2237
+python-telegram-bot==13.15
