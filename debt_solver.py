@@ -14,8 +14,8 @@ class DebtSolver:
                       values are the amounts they spent.
         """
         self.expenses, self.per_capita_expense = self.round_cents(expenses)
-        self.debts = {k: max(0, self.per_capita_expense-v) for k,v in self.expenses.items()}
-        self.loans = {k: max(0, v-self.per_capita_expense) for k,v in self.expenses.items()}
+        self.debts = {k: max(0, self.per_capita_expense*(k.count("+")+1)-v) for k,v in self.expenses.items()}
+        self.loans = {k: max(0, v-self.per_capita_expense*(k.count("+")+1)) for k,v in self.expenses.items()}
 
         self.solver = pywraplp.Solver.CreateSolver('SCIP')
         
@@ -77,10 +77,11 @@ class DebtSolver:
             integer.
         """
         # Round the per-capita expense to the nearest dollar
-        per_capita_expense = round(sum(expenses.values())/len(expenses))
+        n_people = sum([1+k.count("+") for k in expenses])
+        per_capita_expense = round(sum(expenses.values())/n_people)
 
         # Calculate the difference between the total expenses and the per-capita expense
-        diff = sum(expenses.values())-(per_capita_expense*len(expenses))
+        diff = sum(expenses.values())-(per_capita_expense*n_people)
         
         # Sort the expenses in decreasing order by value
         expenses = sorted(list(expenses.items()), key=lambda x: x[1], reverse=True)
@@ -90,3 +91,14 @@ class DebtSolver:
         
         # Return the rounded expenses and per-capita expense
         return dict(expenses), per_capita_expense
+
+if __name__ == "__main__": 
+    expenses = {
+        "Person 1": 40967,
+        "Person 2+Person 3": 40967, 
+        "Person 4+Person 5": 40967,
+        "Person 6": 12000,
+        "Person 7": 0
+    }
+    result = DebtSolver(expenses).solve()
+    print(result)
